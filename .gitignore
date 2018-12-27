@@ -5,3 +5,5 @@ Game/Assets/Materials.meta
 .csv$
 .csv.meta$
 /Debug/
+*Debug/
+ReviewProject/Debug/
