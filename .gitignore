@@ -7,3 +7,6 @@ Game/Assets/Materials.meta
 /Debug/
 *Debug/
 ReviewProject/Debug/
+*.suo
+*.db
+*ipch
