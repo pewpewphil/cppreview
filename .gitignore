@@ -8,6 +8,8 @@ Game/Assets/Materials.meta
 *Debug/
 ReviewProject/Debug/
 /.vs/
+!/.vs/
+/.vs/*
 *.suo$
 *.db$
 *.ipch$
