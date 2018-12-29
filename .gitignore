@@ -9,4 +9,4 @@ Game/Assets/Materials.meta
 ReviewProject/Debug/
 *.suo
 *.db
-*ipch
+*.ipch
