@@ -1,8 +1,13 @@
 #include <iostream>
 #include <string>
 #include <vector> 
+#include <Windows.h>
+#pragma comment(lib, "winmm.lib")
+
 #include "BaseClass.h"
 #include "math.h"
+
+
 using namespace std;
 
 int main()
@@ -22,6 +27,7 @@ int main()
 
 	// The result is 00010010  
 	printf("b<<1 = %d\n", b << 1);
+	PlaySound(TEXT("Action_Dash.wav"), NULL, SND_FILENAME);
 	test = cin.get();
 
 	//declaration
@@ -44,5 +50,7 @@ int main()
 	Base aClass = Derived1();
 	aClass.~Base();
 
+	
+	system("pause");
 	return 0; 
 }
