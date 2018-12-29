@@ -19,14 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BaseClass.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Math.cpp" />
+    <ClInclude Include="Code\Headers\BaseClass.h" />
+    <ClInclude Include="Code\Headers\Hello.h" />
+    <ClInclude Include="Code\Headers\math.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BaseClass.h" />
-    <ClInclude Include="Hello.h" />
-    <ClInclude Include="math.h" />
+    <ClCompile Include="Code\BaseClass.cpp" />
+    <ClCompile Include="Code\main.cpp" />
+    <ClCompile Include="Code\Math.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

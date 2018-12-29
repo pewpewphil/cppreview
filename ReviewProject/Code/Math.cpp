@@ -1,6 +1,6 @@
 
 using namespace std;
-#include "math.h"
+#include "Headers/math.h"
 
 
 void MathClass:: PrintName()

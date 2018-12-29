@@ -1,5 +1,5 @@
 #include <iostream>
-#include "BaseClass.h"
+#include "Headers/BaseClass.h"
 using namespace std;
 
 Base::Base()
@@ -26,10 +26,3 @@ Derived1::~Derived1()
 {
 	cout << "Derived destructor called\n";
 }
-
-//
-//int main()
-//{
-//	Base *b = new Derived1();
-//	delete b;
-//}

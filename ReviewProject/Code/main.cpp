@@ -4,8 +4,8 @@
 #include <Windows.h>
 #pragma comment(lib, "winmm.lib")
 
-#include "BaseClass.h"
-#include "math.h"
+#include "Headers/BaseClass.h"
+#include "Headers/math.h"
 
 
 using namespace std;

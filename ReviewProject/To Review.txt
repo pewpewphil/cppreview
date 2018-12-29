@@ -1,7 +1,8 @@
 To review 
 Code Terms 
 -Delegates 
--Freind functions
+-Friend functions
+-project environment path 
 
 
 Math 
