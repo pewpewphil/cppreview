@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector> 
+#include "BaseClass.h"
 using namespace std;
 
 int main()
@@ -20,7 +21,12 @@ int main()
 		cout << Strings[i]<< " has a size of  " << size<< endl;
 	}
 
+	Base *b = new Derived1();
+	delete b;
 
+
+	Base aClass = Derived1();
+	aClass.~Base();
 
 	return 0; 
 }
