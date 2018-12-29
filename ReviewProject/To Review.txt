@@ -1,0 +1,11 @@
+To review 
+Code Terms 
+-Delegates 
+-Freind functions
+
+
+Math 
+-dot product 
+-cross product 
+
+
