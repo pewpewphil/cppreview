@@ -27,7 +27,6 @@ ReviewProject/Debug/
 # Compiled Dynamic libraries
 *.so
 *.dylib
-*.dll
 
 # Fortran module files
 *.mod
@@ -36,8 +35,6 @@ ReviewProject/Debug/
 # Compiled Static libraries
 *.lai
 *.la
-*.a
-*.lib
 
 # Executables
 *.exe
