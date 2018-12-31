@@ -10,9 +10,11 @@
 
 using namespace std;
 
-int main()
+void TestMathClass();
+
+
+void TestMathClass()
 {
-	//cout << " hello world "; 
 	MathClass MC;
 	int test;
 	cout << "Hello World! ";
@@ -27,8 +29,10 @@ int main()
 
 	// The result is 00010010  
 	printf("b<<1 = %d\n", b << 1);
-	PlaySound(TEXT("Action_Dash.wav"), NULL, SND_FILENAME);
-	test = cin.get();
+}
+
+void TestStrings()
+{
 
 	//declaration
 	vector<string> Strings;
@@ -40,17 +44,33 @@ int main()
 	for (int i = 0; i < Strings.size(); i++)
 	{
 		int size = Strings[i].size();
-		cout << Strings[i]<< " has a size of  " << size<< endl;
+		cout << Strings[i] << " has a size of  " << size << endl;
 	}
+}
 
+void TestDervived()
+{
 	Base *base = new Derived1();
 	delete base;
 
 
 	Base aClass = Derived1();
 	aClass.~Base();
+}
 
-	
+void PlaySoundOld()
+{
+	PlaySound(TEXT("Action_Dash.wav"), NULL, SND_FILENAME);
+}
+
+
+int main()
+{
+	TestMathClass();
+	TestStrings();
+	TestDervived();
+	PlaySoundOld();
+
 	system("pause");
 	return 0; 
 }
