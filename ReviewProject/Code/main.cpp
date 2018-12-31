@@ -2,7 +2,7 @@
 #include <string>
 #include <vector> 
 #include <Windows.h>
-#pragma comment(lib, "winmm.lib")
+//#pragma comment(lib, "winmm.lib")
 
 #include "Headers/BaseClass.h"
 #include "Headers/math.h"
