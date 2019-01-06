@@ -3,7 +3,7 @@ using namespace std;
 
 FmodSound::FmodSound()
 {
-
+	usingDebug = false;
 	/*
 		Create a System object and initialize
 	*/
@@ -23,20 +23,20 @@ FmodSound::FmodSound()
 	cout << "result is " << FMOD_ErrorString(result) << "\n";
 
 
-	if (Debug)
-		cout << "FmodSound Initialize Called";
+	if (usingDebug)
+		cout << "FmodSound Initialize Called and debug is "<< usingDebug << "\n";
 }
 
 FmodSound::FmodSound(bool inputDebug)
 {
-	Debug = inputDebug;
+	usingDebug = inputDebug;
 	/*
 		Create a System object and initialize
 	*/
 	result = FMOD::System_Create(&system);
 
 	result = system->getVersion(&version);
-	if (Debug)
+	if (usingDebug)
 		cout << "result is " << FMOD_ErrorString(result) << "\n";
 	//ERRCHECK(result);
 
@@ -46,42 +46,35 @@ FmodSound::FmodSound(bool inputDebug)
 	}
 
 	result = system->init(32, FMOD_INIT_NORMAL, extradriverdata);
-	if (Debug)
+	if (usingDebug)
 		cout << "result is " << FMOD_ErrorString(result) << "\n";
 
-
-	if (Debug)
-		cout << "FmodSound Initialize Called";
+	cout << "debug is " << usingDebug << "\n";
+	if (usingDebug)
+		cout << "FmodSound Initialize Called and debug is " << usingDebug <<" \n";
 }
 
-void FmodSound::LoadSound()
+void FmodSound::LoadSound(string SoundName)
 {
-	result = system->createSound(Common_MediaPath("drumloop.wav"), FMOD_DEFAULT, 0, &sound1);
+	const char * SoundConstantCh = SoundName.c_str();
+	FMOD::Sound *AddingSound ;
+	result = system->createSound(Common_MediaPath(SoundConstantCh), FMOD_DEFAULT, 0, &AddingSound);
 	//Common_MediaPath("drumloop.wav");
 	//result = sound1->setMode(FMOD_LOOP_OFF);    /* drumloop.wav has embedded loop points which automatically makes looping turn on, */
 		   /* so turn it off here.  We could have also just put FMOD_LOOP_OFF in the above CreateSound call. */
 
-	if (Debug)
+	LoadedSoundsVector.push_back(AddingSound);
+
+	if (usingDebug)
 		cout << "result is " << FMOD_ErrorString(result) << "\n";
 }
 
 void FmodSound::PlayLoadedSound(int SoundNumber)
 {
-	FMOD::Sound *PlayingSound = sound1;
-	switch (SoundNumber)
-	{
-	case 1:
-		PlayingSound = sound1;
-		break;
-	case 2:
-		PlayingSound = sound2;
-		break;
-	default:
-		break;
-	}
+	FMOD::Sound *PlayingSound = LoadedSoundsVector.at(SoundNumber);
 
 	result = system->playSound(PlayingSound, 0, false, &channel);
-	if (Debug)
+	if (usingDebug)
 		cout << "result is " << FMOD_ErrorString(result) << "\n";
 }
 
@@ -92,7 +85,7 @@ void FmodSound::Update()
 
 FmodSound::~FmodSound() {
 	result = sound1->release();
-	if (Debug)
+	if (usingDebug)
 		cout << "FmodSound Destructor called\n";
 }
 

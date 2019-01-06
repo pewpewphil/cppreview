@@ -54,6 +54,8 @@ void TestStrings()
 
 void TestDervived()
 {
+	Base *base0;
+
 	Base *base = new Derived1();
 	delete base;
 
@@ -76,21 +78,26 @@ void pointerReview()
 
 int main()
 {
-	TestMathClass();
+	//TestMathClass();
 	//TestStrings();
-	//TestDervived();
+	TestDervived();
 	//PlaySoundOld();
 
 	static unsigned int inputButton = 0;
 	static unsigned int ExitPress = 27;
 
-	FmodSound FSound = new FmodSound();
-	FSound.LoadSound();
+	FmodSound FSound = new FmodSound(false);
+	FSound.LoadSound("drumloop.wav");
+	FSound.LoadSound("swish.wav");
 	
 	do
 	{
 		int channelsplaying = 0;
 		if (inputButton == 1)
+		{
+			FSound.PlayLoadedSound(0);
+		}
+		if (inputButton == 2)
 		{
 			FSound.PlayLoadedSound(1);
 		}
@@ -99,7 +106,7 @@ int main()
 		cin >> inputButton;
 		FSound.Update();
 		Sleep(10);
-	} while (inputButton != 2);
+	} while (inputButton != 3);
 	
 	FSound.~FmodSound();
 	system("pause");

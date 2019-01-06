@@ -4,7 +4,8 @@ using namespace std;
 
 Base::Base()
 {
-	cout << "Base Constructor Called\n";
+	
+	cout << "Base Constructor Called and debug="<< isDebug <<"\n";
 }
 
 int Base::ReturnIncrease(int number)

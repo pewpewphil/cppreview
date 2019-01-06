@@ -4,9 +4,10 @@
 #include "FmodInc/fmod_errors.h";
 #include "FmodSound.h"
 
-#include <vector>
 #include <iostream>
+#include <vector>
 #include <string>
+using namespace std;
 
 class FmodSound
 {
@@ -18,19 +19,19 @@ public:
 	FMOD_RESULT       result;
 	unsigned int      version;
 	void             *extradriverdata = 0;
-	//vector<FMOD::Sound>    SoundsVector;
+	std::vector<FMOD::Sound*>    LoadedSoundsVector;
 
 	// class 
 	FmodSound();
 	FmodSound(bool debug);
 
-	void LoadSound();
+	void LoadSound(string SoundName);
 	void PlayLoadedSound(int number);
 	int ReturnIncrease(int number);
 	
 	void Update();
 
-	bool Debug = false;
+	bool usingDebug = false;
 
 	~FmodSound();
 };

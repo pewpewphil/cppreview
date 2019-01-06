@@ -6,6 +6,8 @@ public:
 
 	int ReturnIncrease(int number);
 
+
+	bool isDebug;
 	 ~Base();
 };
 
