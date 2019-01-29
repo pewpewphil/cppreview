@@ -78,6 +78,15 @@ void FmodSound::PlayLoadedSound(int SoundNumber)
 		cout << "result is " << FMOD_ErrorString(result) << "\n";
 }
 
+void FmodSound::PauseSound(int SoundNumber)
+{
+	FMOD::Sound *PlayingSound = LoadedSoundsVector.at(SoundNumber);
+
+	result = system->playSound(PlayingSound, 0, true, &channel);
+	if (usingDebug)
+		cout << "result is " << FMOD_ErrorString(result) << "\n";
+}
+
 void FmodSound::Update()
 {
 	system->update();

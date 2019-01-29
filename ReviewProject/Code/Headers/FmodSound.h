@@ -16,10 +16,12 @@ public:
 	FMOD::System     *system;
 	FMOD::Sound      *sound1, *sound2, *sound3;
 	FMOD::Channel    *channel = 0;
+	FMOD::Channel    *channel2 = 0;
 	FMOD_RESULT       result;
 	unsigned int      version;
 	void             *extradriverdata = 0;
 	std::vector<FMOD::Sound*>    LoadedSoundsVector;
+	std::vector<FMOD::Channel*>    LoadedChannelVector;
 
 	// class 
 	FmodSound();
@@ -28,6 +30,7 @@ public:
 	void LoadSound(string SoundName);
 	void PlayLoadedSound(int number);
 	int ReturnIncrease(int number);
+	void PauseSound(int number);
 	
 	void Update();
 

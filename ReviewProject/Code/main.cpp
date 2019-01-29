@@ -102,11 +102,16 @@ int main()
 			FSound.PlayLoadedSound(1);
 		}
 
+		if (inputButton == 3)
+		{
+			FSound.PauseSound(1);
+		}
+
 
 		cin >> inputButton;
 		FSound.Update();
 		Sleep(10);
-	} while (inputButton != 3);
+	} while (inputButton != 0);
 	
 	FSound.~FmodSound();
 	system("pause");
